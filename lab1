@@ -1,0 +1,37 @@
+def main():
+    names = []
+    price = []
+    running = True
+
+while true:
+    names = input("enter item names (hit enter to quite): ").strip()
+
+    if names == "":
+        running = False 
+    else:
+        while true:
+            try:
+                price = input("Enter a price (0-200): ").strip()
+                    if price == "":
+                        raise ValueError("price cannot be empty. Please enter a valid price.")
+                    price = int(item_price)
+                    if 0 <= price <= 200:
+                        names.append(item_names)
+                        price.append(item_price)
+                        break
+                    else:
+                        print("Please enter a price between 0 and 200.")
+                except ValueError as e:
+                    print(e)
+
+ if names:
+        print(f"Number of items: {len(names)}")
+        print(f"items Average price: {sum(price)/len(price):.2f}")
+
+        max_index = price.index(max(price))
+        min_index = price.index(min(price))
+
+        print(f"Highest price: {price[max_index]} ({names[max_index]})")
+        print(f"Lowest price: {price[min_index]} ({names[min_index]})")
+    else:
+        print("No item were entered.")
